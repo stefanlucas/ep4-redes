@@ -42,7 +42,7 @@ def joomla_370_sqli_extract(options, sess, token, colname, morequery):
 		if not value:
 			print(" [!] Failed to retrieve string for query:", sqli)
 			return None
-		value = binascii.unhexlify(value)
+		value = binascii.unhexlify(value).decode()
 		result += value
 		offset += len(value)
 	return result
